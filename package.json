@@ -1,0 +1,33 @@
+{
+  "name": "telepay",
+  "description": "Telepay library to use pay methods.",
+  "version": "0.0.4",
+  "author": "CodersBrothers",
+  "homepage": "https://github.com/CodersBrothers/telepay",
+  "bugs": {
+    "url": "https://github.com/CodersBrothers/telepay/issues"
+  },
+  "keywords": [
+    "telepay",
+    "bank",
+    "money",
+    "credit card",
+    "uKash",
+    "pagofacil"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodersBrothers/telepay.git"
+  },
+  "dependencies": {
+    "q": "^1.0.1",
+    "querystring": "^0.2.0",
+    "request": "^2.42.0"
+  },
+  "main": "telepay",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
