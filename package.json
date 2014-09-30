@@ -1,7 +1,7 @@
 {
   "name": "telepay",
   "description": "Telepay library to use pay methods.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "CodersBrothers",
   "homepage": "https://github.com/CodersBrothers/telepay",
   "bugs": {

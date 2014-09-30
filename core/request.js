@@ -22,7 +22,7 @@ function makeRequest(requestConfig, accessKey, accessSecret){
     request(requestConfig, function callback(error, response, body) {
         if(error){
             df.reject(error);
-        }else if (!error && response.statusCode == 200) {
+        }else if (!error && (response.statusCode == 200 || response.statusCode == 201)) {
             try{
                 body = JSON.parse(body);
                 df.resolve(body);
