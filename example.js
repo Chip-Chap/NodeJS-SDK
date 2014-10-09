@@ -1,15 +1,12 @@
 var Telepay = require('./telepay');
-var accessKey = 'yourkey';
-var accessSecret = 'yoursecret';
-var environment = 'test';
-//var environment = 'real';
-var telepay = new Telepay(accessKey, accessSecret, environment);
+var config = require('./config'); // change dist-config.json to config.json and set your keys
+var environment = 'test'; // test|real
+var telepay = new Telepay(config.accessKey, config.accessSecret, environment);
 
 // SAMPLE
-/*
 telepay.sample.status()
     .then(function(response){
-        console.log(response);git rebase -i HEAD~2
+        console.log(response);
     })
     .fail(function(e){
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
@@ -27,8 +24,9 @@ telepay.pagofacil.status(transactionId)
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
 */
-/*
+
 // Create transaction
+/*
 telepay.pagofacil.create({
         name: 'Paco',
         surname: 'Perez',
@@ -46,14 +44,15 @@ telepay.pagofacil.create({
         city: 'sdadsasdas',
         quarter: 'asdasdasd',
         country: 'asdasdasd',
-        transaction_id: '12345nueva'
+        transaction_id: '123452ueva'
     })
     .then(function(response){
         console.log(response);
     })
     .fail(function(e){
-        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+        console.log(e, e.statusCode, e.body.code, e.body.message, e.body.data);
     });
+*/
 
 /*
 // TODITOCASH
@@ -116,3 +115,18 @@ telepay.paynetReference.status('321554')
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
 */
+
+// UKASH
+// Create transaction
+telepay.ukash.create({
+        merchant_id: 'patataShop',
+        currency: 'MXN',
+        transaction_id: '123qwe321',
+        amount: '1'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });

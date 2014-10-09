@@ -13,7 +13,10 @@
     "money",
     "credit card",
     "uKash",
-    "pagofacil"
+    "uKash redemption",
+    "pagofacil",
+    "paynet",
+    "todito cash"
   ],
   "repository": {
     "type": "git",

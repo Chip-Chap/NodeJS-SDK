@@ -12,15 +12,15 @@ $ npm i --save telepay
 - PagoFacil
 - Paynet Reference
 - Todito Cash
+- uKash
 
 ## Usage
 
 ```js
 var Telepay = require('./telepay');
-var accessKey = 'yourkey';
-var accessSecret = 'yoursecret';
+var config = require('./config'); // change dist-config.json to config.json and set your keys
 var environment = 'test'; // test|real
-var telepay = new Telepay(accessKey, accessSecret, environment);
+var telepay = new Telepay(config.accessKey, config.accessSecret, environment);
 
 // SAMPLE
 telepay.sample.status()
@@ -48,7 +48,6 @@ You can see *example.js* file to see more details and uses.
 - Other pay methods
     - PayU
     - SafetyPay
-    - uKash
 
 #### License
 
