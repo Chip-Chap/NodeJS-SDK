@@ -118,6 +118,7 @@ telepay.paynetReference.status('321554')
 
 // UKASH
 // Create transaction
+/*
 telepay.ukash.create({
         merchant_id: 'patataShop',
         currency: 'MXN',
@@ -130,3 +131,4 @@ telepay.ukash.create({
     .fail(function(e){
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
+    */
