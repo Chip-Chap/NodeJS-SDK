@@ -10,7 +10,7 @@ var baseUrl = 'services/v1/ukash/';
  * @param {String} transactionDetails.transaction_id
  */
 function create(transactionDetails){
-    return this.request('post', baseUrl + 'generate/', transactionDetails);
+    return this.request('post', baseUrl + 'generate', transactionDetails);
 }
 exports.create = create;
 
@@ -21,12 +21,12 @@ exports.create = create;
  * @param {String} transactionDetails.merchant_id
  * @param {String} transactionDetails.currency
  * @param {String} transactionDetails.transaction_id
- * @param {String} transactionDetails.voucher_value
  * @param {String} transactionDetails.voucher_number
+ * @param {String} transactionDetails.voucher_value
  * @param {String} transactionDetails.transaction_amount
  */
 function createRedemption(transactionDetails){
-    return this.request('post', baseUrl + 'redemption/', transactionDetails);
+    return this.request('post', baseUrl + 'redemption', transactionDetails);
 }
 
 /**
@@ -41,13 +41,11 @@ function createRedemption(transactionDetails){
  * @param {String} transactionDetails.transaction_amount
  */
 function statusRedemption(transactionDetails){
-    return this.request('get', baseUrl + 'redemption/status/', transactionDetails);
+    return this.request('get', baseUrl + 'redemption/status', transactionDetails);
 }
-exports.redemption = function(){
-    return {
-        create: createRedemption.bind(this),
-        status: statusRedemption.bind(this)
-    }
+exports.redemption = {
+    create: createRedemption,
+    status: statusRedemption
 };
 
 /**
@@ -63,7 +61,7 @@ exports.redemption = function(){
  * @param {String} transactionDetails.url_notification
  */
 function createRedirect(transactionDetails){
-    return this.request('post', baseUrl + 'redirect/request/', transactionDetails);
+    return this.request('post', baseUrl + 'redirect/request', transactionDetails);
 }
 
 /**
@@ -72,13 +70,11 @@ function createRedirect(transactionDetails){
  * @param {String} utid
  */
 function statusRedirect(utid){
-    return this.request('get', baseUrl + 'redirect/status/', {
+    return this.request('get', baseUrl + 'redirect/status', {
         utid: utid
     });
 }
-exports.redirect = function(){
-    return {
-        create: createRedirect.bind(this),
-        status: statusRedirect.bind(this)
-    }
+exports.redirect = {
+    create: createRedirect,
+    status: statusRedirect
 };

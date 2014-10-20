@@ -1,9 +1,16 @@
+/**
+ * EXAMPLE OF METHODS
+ * You can see how you can use methods for speak with Telepay
+ * Here there are the params that you must use.
+ * Are only examples. The key of params are real, the values are as dummy, please fill with your real data.
+ */
 var Telepay = require('./telepay');
 var config = require('./config'); // change dist-config.json to config.json and set your keys
 var environment = 'test'; // test|real
 var telepay = new Telepay(config.accessKey, config.accessSecret, environment);
 
-// SAMPLE
+// --------------- SAMPLE ---------------
+/*
 telepay.sample.status()
     .then(function(response){
         console.log(response);
@@ -11,9 +18,10 @@ telepay.sample.status()
     .fail(function(e){
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
+*/
 
 /*
-// PAGOFACIL
+// --------------- PAGOFACIL ---------------
 // Transaction status
 var transactionId = '12345nueva';
 telepay.pagofacil.status(transactionId)
@@ -55,7 +63,7 @@ telepay.pagofacil.create({
 */
 
 /*
-// TODITOCASH
+// --------------- TODITOCASH ---------------
 // Create transaction
 telepay.toditocash.create({
         transaction_id: '321554',
@@ -91,7 +99,7 @@ telepay.toditocash.status({
     });
 */
 
-// PAYNET-REFERENCE
+// --------------- PAYNET-REFERENCE ---------------
 // Create transaction
 /*
 telepay.paynetReference.create({
@@ -116,13 +124,13 @@ telepay.paynetReference.status('321554')
     });
 */
 
-// UKASH
+// --------------- UKASH ---------------
 // Create transaction
 /*
 telepay.ukash.create({
         merchant_id: 'patataShop',
         currency: 'MXN',
-        transaction_id: '123qwe321',
+        transaction_id: '123qwe321qq',
         amount: '1'
     })
     .then(function(response){
@@ -131,4 +139,38 @@ telepay.ukash.create({
     .fail(function(e){
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
-    */
+*/
+/*
+// Charge
+telepay.ukash.redemption.create({
+        merchant_id: 'patataShop',
+        voucher_number: '6337185389903862419',
+        transaction_amount: '1',
+        voucher_value: '1',
+        currency: 'MXN',
+        transaction_id: '1111abacaa'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+*/
+/*
+// Status of charge
+telepay.ukash.redemption.status({
+        merchant_id: 'patataShop',
+        voucher_number: '6337185389903862419',
+        transaction_amount: '1',
+        voucher_value: '1',
+        currency: 'MXN',
+        transaction_id: '1111abacaa'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+*/
