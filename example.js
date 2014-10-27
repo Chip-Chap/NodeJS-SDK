@@ -100,22 +100,13 @@ telepay.toditocash.status({
 */
 
 // --------------- PAYNET-REFERENCE ---------------
-// Create transaction
+// Create paynet reference
 /*
-telepay.paynetReference.create({
+telepay.paynet.reference.create({
         client_reference: '321554',
         amount: '10',
-        description: ''
+        description: 'abc'
     })
-    .then(function(response){
-        console.log(response);
-    })
-    .fail(function(e){
-        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
-    });
-
-// Status transaction
-telepay.paynetReference.status('321554')
     .then(function(response){
         console.log(response);
     })
@@ -123,6 +114,68 @@ telepay.paynetReference.status('321554')
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
 */
+/*
+// Status transaction
+telepay.paynet.reference.status('321554')
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+*/
+// --------------- PAYNET-PAYMENT ---------------
+/*
+// Get info of payment
+telepay.paynet.payment.info({
+        date: '26/10/2014',
+        hour: '12:50:50',
+        transaction_id: 'abc',
+        sku: '123456',
+        reference: '123reference'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+*/
+/*
+// Get status of payment
+telepay.paynet.payment.info({
+        date: '26/10/2014',
+        hour: '12:50:50',
+        transaction_id: 'abc',
+        sku: '123456',
+        reference: '123reference',
+        amount: '10'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+*/
+/*
+// Create a payment transaction
+telepay.paynet.payment.transaction({
+        date: '26/10/2014',
+        hour: '12:50:50',
+        transaction_id: 'abc',
+        sku: '123456',
+        fee: '1',
+        reference: '123reference',
+        amount: '10',
+        dv: '0'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
 
 // --------------- UKASH ---------------
 // Create transaction

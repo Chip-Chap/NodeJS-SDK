@@ -1,5 +1,4 @@
 # TELEPAY
-
 Telepay it's a platform for exchange money between different alternative pay methods. 
 
 ## Install
@@ -9,10 +8,15 @@ $ npm i --save telepay
 ```
 
 ## Supported pay methods
+It's supported V1 of API.
+
 - PagoFacil
 - Paynet Reference
+- Paynet Payment
 - Todito Cash
-- uKash
+- uKash Redemption
+- uKash Generate
+- uKash Redirect
 
 ## Usage
 
@@ -22,7 +26,7 @@ var config = require('./config'); // change dist-config.json to config.json and 
 var environment = 'test'; // test|real
 var telepay = new Telepay(config.accessKey, config.accessSecret, environment);
 
-// SAMPLE
+// SAMPLE (Only as example, for check telepay status)
 telepay.sample.status()
     .then(function(response){
         console.log(response);
@@ -31,14 +35,31 @@ telepay.sample.status()
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
     
-// PAGOFACIL
-var transactionId = 32123;
-telepay.pagofacil.status(transactionId)
+// PAGOFACIL EXAMPLE (Credit card pay)
+telepay.pagofacil.create({
+        name: 'Mikel',
+        surname: 'Perez',
+        card_number: '4385485952023612',
+        cvv: '222',
+        expiration_month: '12',
+        expiration_year: '14',
+        amount: '20',
+        mail: 'my@email.com',
+        phone: '3491558817',
+        mobile_phone: '656545466',
+        street_number: '12',
+        colony: '',
+        cp: '12345',
+        city: 'Madrid',
+        quarter: '',
+        country: 'Spain',
+        transaction_id: 'randomstring'
+    })
     .then(function(response){
         console.log(response);
     })
     .fail(function(e){
-        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+        console.log(e, e.statusCode, e.body.code, e.body.message, e.body.data);
     });
 ```
 
@@ -48,6 +69,7 @@ You can see *example.js* file to see more details and uses.
 - Other pay methods
     - PayU
     - SafetyPay
+    - Pademobile
 
 #### License
 
