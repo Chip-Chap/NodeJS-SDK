@@ -7,8 +7,11 @@ Telepay it's a platform for exchange money between different alternative pay met
 $ npm i --save telepay
 ```
 
+## Version
+0.0.7
+
 ## Supported pay methods
-It's supported V1 of API.
+This support the next gateways for V1 of Telepay API.
 
 - PagoFacil
 - Paynet Reference
