@@ -32,4 +32,4 @@ exports.status = status;
 function create(transactionDetails){
     return this.request('post', baseUrl + 'request', transactionDetails);
 }
-exports.create = create;
+exports.send = create;

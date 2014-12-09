@@ -10,7 +10,7 @@ var environment = 'test'; // test|real
 var telepay = new Telepay(config.accessKey, config.accessSecret, environment);
 
 // --------------- SAMPLE ---------------
-/*
+
 telepay.sample.status()
     .then(function(response){
         console.log(response);
@@ -18,7 +18,7 @@ telepay.sample.status()
     .fail(function(e){
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
-*/
+
 
 /*
 // --------------- PAGOFACIL ---------------
@@ -62,17 +62,18 @@ telepay.pagofacil.create({
     });
 */
 
-/*
+
 // --------------- TODITOCASH ---------------
+/*
 // Create transaction
 telepay.toditocash.create({
-        transaction_id: '321554',
-        date: '2014-09-25',
+        transaction_id: '321554test',
+        date: '2014-10-27',
         hour: '23:02:10',
         card_number: '4385485952023612',
-        nip: '',
+        nip: '12',
         amount: '10',
-        concept: '',
+        concept: 'a',
         currency: 'MXN'
     })
     .then(function(response){
@@ -81,7 +82,8 @@ telepay.toditocash.create({
     .fail(function(e){
         console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
     });
-
+*/
+/*
 // Transaction status
 telepay.toditocash.status({
         transaction_id: '321554',
@@ -219,6 +221,41 @@ telepay.ukash.redemption.status({
         voucher_value: '1',
         currency: 'MXN',
         transaction_id: '1111abacaa'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+*/
+
+// --------------- HALCASH ---------------
+/*
+// Send
+telepay.halcash.send({
+        phone_number: '00034000606152121',
+        country: 'ESP',
+        amount: '1',
+        reference: 'Test',
+        pin: '7777',
+        transaction_id: 'test123'
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .fail(function(e){
+        console.log(e.statusCode, e.body.code, e.body.message, e.body.data);
+    });
+
+// Pay
+telepay.halcash.pay({
+        phone_number: '00034000606152121',
+        country: 'ESP',
+        amount: '1',
+        reference: 'Test',
+        pin: '7777',
+        transaction_id: 'test123'
     })
     .then(function(response){
         console.log(response);

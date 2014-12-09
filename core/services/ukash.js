@@ -12,7 +12,7 @@ var baseUrl = 'services/v1/ukash/';
 function create(transactionDetails){
     return this.request('post', baseUrl + 'generate', transactionDetails);
 }
-exports.create = create;
+exports.send = create;
 
 /**
  * CREATE A UKASH REDEMPTION
