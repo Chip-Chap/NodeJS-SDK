@@ -8,7 +8,7 @@ $ npm i --save telepay
 ```
 
 ## Version
-0.0.7
+0.0.9
 
 ## Supported pay methods
 This support the next gateways for V1 of Telepay API.
@@ -20,6 +20,7 @@ This support the next gateways for V1 of Telepay API.
 - uKash Redemption
 - uKash Generate
 - uKash Redirect
+- Halcash
 
 ## Usage
 
